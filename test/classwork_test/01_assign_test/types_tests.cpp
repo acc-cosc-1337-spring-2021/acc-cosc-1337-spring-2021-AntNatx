@@ -11,7 +11,7 @@ TEST_CASE("test multiply_numbers", "value 50")
 	REQUIRE(multiply_numbers(10) == 50);
 }
 
-TEST_CASE("test multiply_numbers", "value 50")
+TEST_CASE("test multiply_numbers 1", "value 50")
 {
 	REQUIRE(multiply_numbers(2) == 10);
 }
