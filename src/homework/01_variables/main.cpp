@@ -1,5 +1,4 @@
 ﻿//write include statements
-#include "variables.cpp"
 #include "variables.h"
 #include <iostream>
 
@@ -18,21 +17,21 @@ int main()
 	double tax_amount;
 	double total;
 	
-	cout<<"How much was the meal: /n";
+	cout<<"How much was the meal: \n";
 	cin>>meal_amount;
 
 	tax_amount = get_sales_tax (meal_amount);
 
-	cout<<"what is the tip rate: /n";
+	cout<<"what is the tip rate: \n";
 	cin>>tip_rate;
 	tip_amount = get_tip_amount(meal_amount, tip_rate);
 
 	total = tip_amount + tax_amount + meal_amount;
 
-	cout<<"Meal Amount: ", meal_amount, "/n"
-	"Sales Tax: ", tax_amount, "/n"
-	"Tip Amount:", tip_amount, "/n"
-	"Total: ", total;
+	cout<<"Meal Amount: "<< meal_amount<<"\n";
+	cout<<"Sales Tax: "<<tax_amount<<"\n";
+	cout<<"Tip Amount:"<<tip_amount<<"\n";
+	cout<<"Total: "<<total;
 
 	return 0;
 }
