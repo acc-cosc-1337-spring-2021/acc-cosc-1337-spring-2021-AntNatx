@@ -16,21 +16,19 @@ int main()
 {	
 	int num;
 	int total;
-	char choice;
-	do
+	char choice = 'y';
+	while (choice == 'y' || choice == 'Y')
 	{
 		cout <<"Enter a number netween 1 and 10: ", '\n';
 		cin>>num;
-		
-		while (num >= 1 && num <= 10)
-		{
-			cout<<"The factorial of your number is " , total = factorial(num), '\n';
-		}
+		total = factorial(num);
+		cout<<"The factorial of your number is "<<total;
 
-		cout<<"Would you like to do another number, enter y for yes or n to exit: ";
+		cout<<"\nWould you like to do another number, enter y for yes or n to exit: ";
+		cin>>choice;
+		// num >= 1 && num <= 10)
 
 	} 
-	while (choice == 'y' || choice == 'Y' );
 	
 	return 0;
 }
