@@ -6,9 +6,9 @@ TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
 
-TEST_CASE("Tests factorial of a do while loop", "verification") 
+TEST_CASE("Tests factorial of a do while loop", "verifying") 
 {
-	 factorial((3) == 6);
-	 factorial((4) == 24);
-	 factorial((5) == 120);
+	 REQUIRE (factorial (3) == 6);
+	 REQUIRE (factorial(4) == 24);
+	 REQUIRE (factorial(5) == 120);
 }

@@ -1,17 +1,16 @@
 #include "loops.h"//cpp
 
 int factorial(int num )
-{   int total;
+{   
+    int total;
     int factor = 1; 
     int accum = 1; 
     
-    do 
-    {   
+    while (accum <= num)
+    {
         total = factor * accum;
         accum++;
-        /* code */
     }
-    while (accum <= num);
     
     return total;
 }
