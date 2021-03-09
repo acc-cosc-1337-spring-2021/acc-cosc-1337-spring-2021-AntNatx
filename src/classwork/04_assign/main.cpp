@@ -1,7 +1,6 @@
 //write includes statements
 #include "loops.h"
 #include <iostream>
-#include "loops.cpp"
 
 //write using statements for cin and cout
 using std::cout; 
@@ -22,10 +21,12 @@ int main()
 	{
 		cout <<"Enter a number netween 1 and 10: ", '\n';
 		cin>>num;
-		if (num < 1 && num > 10)
-			{
-			cout<<"Not a valid number";
-			}
+		while (num < 1 || num > 10)
+		 { 
+			 cout<<"Not a valid number, try again Enter number from 1 to 10 "; cin>>num;
+		 }
+
+
 
 		total = factorial(num);
 		cout<<"The factorial of your number is "<<total;
