@@ -8,11 +8,11 @@ TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
 
-//TEST_CASE("testing loop to find gc content", "using agctatg")
-//{
-	//REQUIRE (get_gc_content("AGCTATAG")== .375);
-	//REQUIRE (get_gc_content("CGCTATAG")== .50);
-//}
+TEST_CASE("testing loop to find gc content", "using agctatg")
+{
+	REQUIRE (get_gc_content("AGCTATAG")== .375);
+	REQUIRE (get_gc_content("CGCTATAG")== .50);
+}
 
 TEST_CASE ("Testing reverse string", "using for loop")
 {
