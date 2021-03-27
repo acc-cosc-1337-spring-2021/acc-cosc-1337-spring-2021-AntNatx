@@ -32,7 +32,7 @@ std::string get_reverse_string(string dna)
 {
     string reverseDna;
     
-    for (int count = (dna.size() - 1); count >= 0; count -- )
+    for (std::size_t count = (dna.size() - 1); count >= 0; count-- )
     {
         reverseDna.push_back( dna[count] );
     }
