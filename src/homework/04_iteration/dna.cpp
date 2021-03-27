@@ -32,9 +32,9 @@ std::string get_reverse_string(string dna)
 {
     string reverseDna;
     
-    for (std::size_t count = (dna.size() - 1); count >= 0; count-- )
+    for (int count = (dna.size() - 1); count >= 0; count-- )
     {
-        reverseDna.push_back( dna[count] );
+        reverseDna.push_back(dna[count]);
     }
 
     return reverseDna;
@@ -67,9 +67,11 @@ std::string get_dna_complement(string dna)
 
         else {reverseDNa[count] == 'C';
         }
+
+    return reverseDNa;    
+    
     }
     
-    return reverseDNa;
 }
 
 /*
