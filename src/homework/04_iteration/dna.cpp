@@ -48,29 +48,24 @@ std::string get_dna_complement(string dna)
 {
     string reverseDNa = get_reverse_string(dna);
 
-    for (std::size_t count = 0; count < dna.size(); count++ )
+    for (std::size_t count = 0; count < dna.size(); count++)
     {
-        if (reverseDNa[count] == 'A'){
-        
-            reverseDNa[count] == 'T';
+        if (reverseDNa[count] == 'A'){       
+        reverseDNa[count] = 'T';
         }
     
         else if (reverseDNa[count] == 'T'){
-        
-            reverseDNa[count] == 'A';
+        reverseDNa[count] = 'A';
         }
 
         else if (reverseDNa[count] == 'C'){
-        
-            reverseDNa[count] == 'G';
+        reverseDNa[count] = 'G';
         }
 
-        else {reverseDNa[count] == 'C';
-        }
-        return reverseDNa;    
-    
+        else reverseDNa[count] ='C';
+        
     }
-    
+return reverseDNa;
 }
 
 /*
