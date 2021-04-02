@@ -1,6 +1,7 @@
 #include <string>
 using std::string;
 #include <vector>
+#include <iostream>
 //h
 class TicTacToe
 {
@@ -14,10 +15,11 @@ public:
     void mark_board(int position);
 
 
-    string get_player();
+    string get_player()const;
 
 
-    void display_board();
+    void display_board()const;
+
 private:
     void set_next_player();
     string player;
@@ -25,5 +27,5 @@ private:
     bool check_board_full();
 
     void clear_board();
-    std::vector<string> pegs {9, " "};
+    std::vector<string> pegs {9, ""};
 };

@@ -7,7 +7,7 @@ using std::cout;
 
 bool TicTacToe::game_over()
 {
-    int checkFullVal = check_board_full();
+    bool checkFullVal = check_board_full();
     return checkFullVal;
 }
 
@@ -28,22 +28,25 @@ void TicTacToe::mark_board(int position)
     set_next_player();
 }
 
-string TicTacToe::get_player()
+string TicTacToe::get_player()const 
 {
     return player;
 }
 
-void TicTacToe::display_board()
+void TicTacToe::display_board()const 
 {   
-   
+    cout<<pegs[0]<<" "<<pegs[1]<<" "<<pegs[2]<<"\n";
+    cout<<pegs[3]<<" "<<pegs[4]<<" "<<pegs[5]<<"\n";
+    cout<<pegs[6]<<" "<<pegs[7]<<" "<<pegs[8]<<"\n";
 }
 
 void TicTacToe::set_next_player()
 {
-    if (player == "X" )
+    if (player == "X")
     {
         player = "O";
     }
+    
     else player = "X";
 }
 
@@ -51,21 +54,19 @@ bool TicTacToe::check_board_full()
 {
     for (int i = 0; i < 9; i++)
     {
-        if (pegs[i] == " ")
+        if (pegs[i] == "")
         {
             return false;
         }
         return true;
     }
-    
-    
 }
 
 void TicTacToe::clear_board()
 {
      for (int i = 0; i < 9; i++)
     {
-        pegs[i] = " ";
+        pegs[i] = "";
     }
      
 }

@@ -25,8 +25,10 @@ int main()
 		cin>>position;
 		game.mark_board(position);
 		
+		game.display_board();
+		
 		//next turn
-		cout<<"Ready to enter next position, press Y or any other key to quit: \n";
+		cout<<"Is next Player ready? Press Y or any other key to quit: \n";
 		cin>>prompt;
 		
 	}
