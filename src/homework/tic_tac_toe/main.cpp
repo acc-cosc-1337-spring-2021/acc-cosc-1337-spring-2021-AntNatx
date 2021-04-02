@@ -31,12 +31,11 @@ int main()
 		//test to see if all spots full
 		if (game.game_over() == true)
 		{
-			cout<<"GAME OVER!";
+			cout<<"\nGAME OVER!\n";
 		}
-		
-		//next turn
-		cout<<"Is next Player ready? Press Y or any other key to quit: \n";
-		cin>>prompt;
+		else
+			cout<<"Is next Player ready? Press Y or any other key to quit: \n";
+			cin>>prompt;
 		
 	}
 	

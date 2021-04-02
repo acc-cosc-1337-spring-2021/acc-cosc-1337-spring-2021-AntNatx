@@ -58,7 +58,8 @@ bool TicTacToe::check_board_full()
         {
             return false;
         }
-        return true;
+        else
+            return true;
     }
 }
 
