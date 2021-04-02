@@ -54,7 +54,7 @@ bool TicTacToe::check_board_full()
 {
     for (int i = 0; i < 9; i++)
     {
-        if (pegs[i] == "")
+        if (pegs[i] == " ")
         {
             return false;
         }
@@ -66,7 +66,7 @@ void TicTacToe::clear_board()
 {
      for (int i = 0; i < 9; i++)
     {
-        pegs[i] = "";
+        pegs[i] = " ";
     }
      
 }

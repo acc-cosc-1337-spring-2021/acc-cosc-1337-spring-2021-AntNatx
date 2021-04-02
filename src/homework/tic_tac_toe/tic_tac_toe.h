@@ -27,5 +27,5 @@ private:
     bool check_board_full();
 
     void clear_board();
-    std::vector<string> pegs {9, ""};
+    std::vector<string> pegs {9, " "};
 };

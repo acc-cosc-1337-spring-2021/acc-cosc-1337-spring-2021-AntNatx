@@ -25,7 +25,14 @@ int main()
 		cin>>position;
 		game.mark_board(position);
 		
+		//display the board
 		game.display_board();
+		
+		//test to see if all spots full
+		if (game.game_over() == true)
+		{
+			cout<<"GAME OVER!";
+		}
 		
 		//next turn
 		cout<<"Is next Player ready? Press Y or any other key to quit: \n";
