@@ -8,6 +8,7 @@ using std::cout;
 bool TicTacToe::game_over()
 {
     bool checkFullVal = check_board_full();
+    
     return checkFullVal;
 }
 
@@ -58,8 +59,7 @@ bool TicTacToe::check_board_full()
         {
             return false;
         }
-        else
-            return true;
+        return true;
     }
 }
 
@@ -67,7 +67,7 @@ void TicTacToe::clear_board()
 {
      for (int i = 0; i < 9; i++)
     {
-        pegs[i] = " ";
+        pegs[i] = "";
     }
      
 }

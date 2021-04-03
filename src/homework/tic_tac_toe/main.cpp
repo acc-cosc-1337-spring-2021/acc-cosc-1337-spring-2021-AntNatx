@@ -28,14 +28,8 @@ int main()
 		//display the board
 		game.display_board();
 		
-		//test to see if all spots full
-		if (game.game_over() == true)
-		{
-			cout<<"\nGAME OVER!\n";
-		}
-		else
-			cout<<"Is next Player ready? Press Y or any other key to quit: \n";
-			cin>>prompt;
+		cout<<"Is next Player ready? Press Y or any other key to quit: \n";
+		cin>>prompt;
 		
 	}
 	
