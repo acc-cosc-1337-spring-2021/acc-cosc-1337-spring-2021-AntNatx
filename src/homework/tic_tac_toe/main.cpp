@@ -27,6 +27,11 @@ int main()
 		
 		//display the board
 		game.display_board();
+		if (game.game_over() == true)
+		{
+			cout<<"Game Over\n";
+			prompt = 'n';
+		}
 		
 		cout<<"Is next Player ready? Press Y or any other key to quit: \n";
 		cin>>prompt;

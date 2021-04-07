@@ -55,12 +55,13 @@ bool TicTacToe::check_board_full()
 {
     for (int i = 0; i < 9; i++)
     {
-        if (pegs[i] == " ")
+        if (pegs[i] == "")
         {
             return false;
         }
-        return true;
+        
     }
+    return true;
 }
 
 void TicTacToe::clear_board()
