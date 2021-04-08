@@ -20,12 +20,26 @@ public:
 
     void display_board()const;
 
+    string get_winner();
+
 private:
+
+    bool check_column_win();
+
+    bool check_row_win();
+
+    bool check_diagnol_win();
+    
+    void set_winner();
+    string winner;
+
     void set_next_player();
     string player;
 
     bool check_board_full();
 
     void clear_board();
-    std::vector<string> pegs {9, " "};
+    std::vector<string> pegs {9, ""};
 };
+
+
