@@ -58,9 +58,9 @@ string TicTacToe::get_player()const
 
 void TicTacToe::display_board()const 
 {   
-    cout<<pegs[0]<<" "<<pegs[1]<<" "<<pegs[2]<<"\n";
-    cout<<pegs[3]<<" "<<pegs[4]<<" "<<pegs[5]<<"\n";
-    cout<<pegs[6]<<" "<<pegs[7]<<" "<<pegs[8]<<"\n";
+    cout<<pegs[0]<<" | "<<pegs[1]<<" | "<<pegs[2]<<"\n";
+    cout<<pegs[3]<<" | "<<pegs[4]<<" | "<<pegs[5]<<"\n";
+    cout<<pegs[6]<<" | "<<pegs[7]<<" | "<<pegs[8]<<"\n";
 }
 
 void TicTacToe::set_next_player()
@@ -174,7 +174,7 @@ bool TicTacToe::check_diagnol_win()
         return true;
     }
     
-    else if (pegs[6] == "X" && pegs[4] == "X" && pegs[3] == "X")
+    else if (pegs[6] == "X" && pegs[4] == "X" && pegs[2] == "X")
     {
         return true;
     }
@@ -184,7 +184,7 @@ bool TicTacToe::check_diagnol_win()
         return true;
     }
     
-    else if (pegs[6] == "O" && pegs[4] == "O" && pegs[3] == "O")
+    else if (pegs[6] == "O" && pegs[4] == "O" && pegs[2] == "O")
     {
         return true;
     }
