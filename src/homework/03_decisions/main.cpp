@@ -26,7 +26,7 @@ GPA 3.0
 */
 int main() 
 {
-	string letter_grade;
+	/*string letter_grade;
 	int credit_hours, sum_credit_hours = 0, sum_credit_points = 0;
 
 	cout << "Enter letter grade: ";
@@ -53,6 +53,16 @@ int main()
 
 	double gpa = calculate_gpa(sum_credit_hours, sum_credit_points);
 	cout << "GPA: " << gpa;
+
+	return 0;*/
+	int grade;
+	cout << "Enter the students numeric grade: ";
+	cin >> grade;
+	cout << "The letter grade using IF is: "<< get_letter_grade_using_if (grade);
+
+	cout << "\nEnter the students numeric grade: ";
+	cin >> grade;
+	cout << "The letter grade using SWITCH is: "<< get_letter_grade_using_switch (grade);
 
 	return 0;
 }
