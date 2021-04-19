@@ -8,7 +8,7 @@ int main()
 {
 	// create an instance of tictactoe
 	TicTacToe game;
-	TicTacToeManager board;
+	TicTacToeManager manager;
 
 	do
 	{
@@ -20,7 +20,10 @@ int main()
 	
 	} while (game.game_over() == false);
 	
-	cout<<board;
+	cout<<" the winner is "<<game.get_winner();
+	
+	//overloaded tictactoemanager should display the total wins?
+	cout<<manager;
 	
 	
 	return 0;
