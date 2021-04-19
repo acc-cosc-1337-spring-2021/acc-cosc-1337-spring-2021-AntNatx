@@ -5,6 +5,66 @@ using std::cout;
 
 //cpp
 
+std::ostream& operator<<(std::ostream& out, TicTacToe& game)
+{
+    cout<<game.pegs[0]<<" | "<<game.pegs[1]<<" | "<<game.pegs[2]<<"\n";
+    cout<<game.pegs[3]<<" | "<<game.pegs[4]<<" | "<<game.pegs[5]<<"\n";
+    cout<<game.pegs[6]<<" | "<<game.pegs[7]<<" | "<<game.pegs[8]<<"\n";
+    
+    return out;
+
+}
+    
+
+std::istream& operator>>(std::istream& in, TicTacToe& game)
+{
+    //declare variable
+	string first_player;
+    
+    
+	
+	//prompt the user for first player
+	std::cout<<"Player 1 enter a capital X or an O to select your choice: \n";
+	in>>first_player;
+	if (first_player != "X" && first_player != "O")
+	{
+		cout<<"\n You did not enter a valid choice. Please enter an X or O: ";
+		std::cin>>first_player;	
+	}
+	//start the game
+
+	game.start_game (first_player);
+	//marking the spots
+	int position;
+
+    do
+    {
+        cout<<"\nPlease enter a position to mark (1-9): \n";
+	    in>>position;
+		
+	    //input validation
+	    if (position < 1 || position > 9)
+	    {
+		    cout<<"\n You did not enter a valid number, Please enter a value between 1-9: ";
+		    std::cin>>position;
+	    }
+        game.mark_board(position);
+        
+        cout<<game;
+        
+        cout<<"Next player, its your turn! \n";
+    } while (game.game_over()== false);
+    
+	
+	
+    return in;
+}
+
+
+
+
+
+
 bool TicTacToe::game_over()
 {
     if (check_row_win() == true)
@@ -27,7 +87,7 @@ bool TicTacToe::game_over()
     
     else if (check_board_full() == true)
     {
-        set_winner();
+        winner = "C";
         return true;
     }
     
@@ -56,12 +116,6 @@ string TicTacToe::get_player()const
     return player;
 }
 
-void TicTacToe::display_board()const 
-{   
-    cout<<pegs[0]<<" | "<<pegs[1]<<" | "<<pegs[2]<<"\n";
-    cout<<pegs[3]<<" | "<<pegs[4]<<" | "<<pegs[5]<<"\n";
-    cout<<pegs[6]<<" | "<<pegs[7]<<" | "<<pegs[8]<<"\n";
-}
 
 void TicTacToe::set_next_player()
 {
@@ -94,7 +148,7 @@ void TicTacToe::clear_board()
     }
      
 }
-string TicTacToe::get_winner()
+string TicTacToe::get_winner() const
 {
     return winner;
 }
@@ -198,11 +252,10 @@ void TicTacToe::set_winner()
     {
         winner = "O";
     }
-    else if (player == "O")
+    else
     {
         winner = "X";
     }
-    else winner = "C";
 }
 
 
