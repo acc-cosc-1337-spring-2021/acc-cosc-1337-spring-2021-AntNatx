@@ -216,7 +216,11 @@ TEST_CASE ("testing x_win", "verification")
 	REQUIRE(game.game_over()== false);
 	game.mark_board(8);
 
-	REQUIRE(test.x == 1);
+	test.save_game(TicTacToe b);
+
+
+
+	REQUIRE(test.manager == 1);
 
 
 }
