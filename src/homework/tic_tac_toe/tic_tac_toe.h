@@ -1,5 +1,5 @@
-#ifndef TicTacToe_h
-#define TicTacToe_h
+#ifndef TIC_TAC_TOE_H
+#define TIC_TAC_TOE_H
 
 #include <string>
 using std::string;
@@ -11,12 +11,16 @@ class TicTacToe
 friend std::ostream& operator<<(std::ostream& out, TicTacToe& game);
 friend std::istream& operator>>(std::istream& in, TicTacToe& game);
 
+
+
 public:
+    
+    TicTacToe(){}
+    TicTacToe(int size) :pegs(size*size, " " ){}//this will initialize some_vector to s*s elemeents of " "
+
     bool game_over();
 
-
     void start_game(string first_player);
-
 
     void mark_board(int position);
 
@@ -27,13 +31,17 @@ public:
 
     string get_winner() const;
 
+protected:
+
+    std::vector<std::string> pegs;
+
+    virtual bool check_column_win()const;
+
+    virtual bool check_row_win()const;
+
+    virtual bool check_diagnol_win()const;
+
 private:
-
-    bool check_column_win();
-
-    bool check_row_win();
-
-    bool check_diagnol_win();
     
     void set_winner();
     string winner;
@@ -44,7 +52,7 @@ private:
     bool check_board_full();
 
     void clear_board();
-    std::vector<string> pegs {9, ""};
+
 };
 #endif
 
