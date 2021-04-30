@@ -10,19 +10,33 @@ false
 bool tictactoe3::check_column_win()
 {
     
-    if (pegs[0].compare(pegs[3]) == 0 &&  pegs[3].compare(pegs[6]) == 0 && pegs[0].compare(" ") != 0)
+    if ((pegs[0] == "X") && (pegs[3] == "X") && (pegs[6] == "X"))
     {
         return true;
     }
-    
-    else if (pegs[1].compare(pegs[4]) == 0 && pegs[4].compare(pegs[7]) == 0 && pegs[1].compare(" ") != 0)
+    else if ((pegs[1] == "X") && (pegs[4] == "X") && (pegs[7] == "X"))
     {
         return true;
     }
-    
-    else if (pegs[2].compare(pegs[5]) == 0 && pegs[5].compare(pegs[8]) == 0 && pegs[2].compare(" ") != 0)
+    else if ((pegs[2] == "X") && (pegs[5] == "X") && (pegs[8] == "X"))
     {
         return true;
+    }
+    else if ((pegs[0] == "O") && (pegs[3] == "O") && (pegs[6] == "O"))
+    {
+        return true;
+    }
+    else if ((pegs[1] == "O") && (pegs[4] == "O") && (pegs[7] == "O"))
+    {
+        return true;
+    }
+    else if ((pegs[2] == "O") && (pegs[5] == "O") && (pegs[8] == "O"))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
     }
 }
 
@@ -35,19 +49,33 @@ Win by row if
 */
 bool tictactoe3::check_row_win ()
 {
-    if (pegs[0].compare(pegs[1]) == 0 && pegs[1].compare(pegs[2]) == 0 && pegs[0].compare(" ") != 0)
+   if ((pegs[0] == "X") && (pegs[1] == "X") && (pegs[2] == "X"))
     {
         return true;
     }
-    
-    else if (pegs[3].compare(pegs[4]) == 0 && pegs[4].compare(pegs[5]) == 0 && pegs[3].compare(" ") != 0)
+    else if ((pegs[3] == "X") && (pegs[4] == "X") && (pegs[5] == "X"))
     {
         return true;
     }
-    
-    else if (pegs[6].compare(pegs[7]) == 0 && pegs[7].compare(pegs[8]) == 0 && pegs[0].compare(" ") != 0)
+    else if ((pegs[6] == "X") && (pegs[7] == "X") && (pegs[8] == "X"))
     {
         return true;
+    }
+    else if ((pegs[0] == "O") && (pegs[1] == "O") && (pegs[2] == "O"))
+    {
+        return true;
+    }
+    else if ((pegs[3] == "O") && (pegs[4] == "O") && (pegs[5] == "O"))
+    {
+        return true;
+    }
+    else if ((pegs[6] == "0") && (pegs[7] == "0") && (pegs[8] == "0"))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
     }
 }
 
@@ -62,13 +90,24 @@ Win diagonally
 */
 bool tictactoe3::check_diagnol_win()
 {
-    if (pegs[0].compare(pegs[4]) == 0 && pegs[4].compare(pegs[5]) == 0 && pegs[0].compare(" ") != 0)
+   if ((pegs[0] == "X") && (pegs[4] == "X") && (pegs[8] == "X"))
     {
         return true;
     }
-    
-    else if (pegs[2].compare(pegs[4]) == 0 && pegs[4].compare(pegs[6]) == 0 && pegs[2].compare(" ") != 0)
+    else if ((pegs[6] == "X") && (pegs[4] == "X") && (pegs[2] == "X"))
     {
         return true;
+    }
+    else if ((pegs[0] == "O") && (pegs[4] == "O") && (pegs[8] == "O"))
+    {
+        return true;
+    }
+    else if ((pegs[6] == "O") && (pegs[4] == "O") && (pegs[2] == "O"))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
     }
 }

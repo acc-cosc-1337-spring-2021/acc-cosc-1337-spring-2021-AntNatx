@@ -83,31 +83,34 @@ std::istream& operator>>(std::istream& in, TicTacToe& game)
 }
 
 
-
+std::vector<string>TicTacToe::get_pegs()const
+{
+    return pegs;
+}
 
 
 
 bool TicTacToe::game_over()
 {
-    if (check_row_win() == true)
+    if (this->check_row_win() == true)
     {
         set_winner();
         return true;
     }
     
-    else if (check_column_win() == true)
+    else if (this->check_column_win() == true)
     {
         set_winner();
         return true;
     }
     
-    else if (check_diagnol_win() == true)
+    else if (this->check_diagnol_win() == true)
     {
         set_winner();
         return true;
     }
     
-    else if (check_board_full() == true)
+    else if (this->check_board_full() == true)
     {
         winner = "C";
         return true;

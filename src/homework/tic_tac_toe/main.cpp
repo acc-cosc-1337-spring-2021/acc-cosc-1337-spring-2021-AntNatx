@@ -8,6 +8,7 @@ using std::cout;
 using std::cin;
 using std::make_unique;
 using std::unique_ptr;
+using std::string;
 
 int main() 
 {
@@ -22,7 +23,11 @@ int main()
 	{
 		int whichGame;
 		cout<<"Would you like 3X3, or 4X4 Tic Tac Toe: ";
-		cin>>whichGame;//ask user input number 
+		cin>>whichGame;
+		int o = 0;
+		int x = 0;
+		int t= 0;
+		//ask user input number 
 		//if 3
 		if (whichGame == 3)
 		{
@@ -36,13 +41,6 @@ int main()
 			game = make_unique<TicTacToe4>();
 			
 		}
-		//TicTacToe3 game;
-		// else if 4
-		//TicTacToe4 game;
-		//else
-		//cout error, invalid board size entered. Please try again
-		// continue;
-		// if game doesnt work, place cin game and cout game insinde if else statements
 	 	do
 		{
 			cin>>*game;
@@ -55,7 +53,7 @@ int main()
 	
 		cout<<" the winner is "<<game->get_winner();
 		manager.save_game(game);
-	
+		manager.get_winner_total(o, x, t);
 		cout<<"\n Would you like to play again? press y or any other key to exit: ";
 		cin>>prompt;
 	
