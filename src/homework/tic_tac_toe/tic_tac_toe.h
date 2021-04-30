@@ -14,9 +14,15 @@ friend std::istream& operator>>(std::istream& in, TicTacToe& game);
 
 
 public:
-    
-    TicTacToe(){}
-    TicTacToe(int size) :pegs(size*size, " " ){}//this will initialize some_vector to s*s elemeents of " "
+
+    TicTacToe(int size):pegs(size*size, " "){};
+    TicTacToe(std::vector<string> p, string win)
+    {
+        pegs = p;
+        winner = win;
+    };//this will initialize some_vector to s*s elemeents of " "
+
+    std::vector<string> get_pegs()const;
 
     bool game_over();
 

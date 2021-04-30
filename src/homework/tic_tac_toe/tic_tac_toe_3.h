@@ -6,8 +6,8 @@ class tictactoe3:public TicTacToe
 {   
     
 public:
-    //class constructors
-    tictactoe3():TicTacToe(3){}
+    tictactoe3():TicTacToe(3){};
+    tictactoe3(std::vector<string>p, string winner):TicTacToe(pegs, winner){}
     
 
 private:
