@@ -13,11 +13,15 @@ using std::string;
 int main() 
 {
 	// create an instance of tictactoe manager
-	TicTacToeManager manager;
+	TicTacToeData data;
+	
+	unique_ptr<TicTacToe>game;
+	
+	TicTacToeManager manager(data);
 	
 	// variable controlling new games
 	string prompt;
-	unique_ptr<TicTacToe> game;
+	
 	//outer loop controlling new games
 	do
 	{
@@ -57,7 +61,7 @@ int main()
 		cout<<"\n Would you like to play again? press y or any other key to exit: ";
 		cin>>prompt;
 	
-	} while (prompt == "y" || prompt == "Y");//create an instance of tictactoe
-	cout<<"End of Game results:\n";
+	} while (prompt == "y" || prompt == "Y");
+	
 	cout<<manager;
 }
