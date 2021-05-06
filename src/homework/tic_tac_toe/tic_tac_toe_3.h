@@ -7,15 +7,16 @@ class tictactoe3:public TicTacToe
     
 public:
     tictactoe3():TicTacToe(3){};
-    tictactoe3(std::vector<string>p, string winner):TicTacToe(pegs, winner){}
+    tictactoe3(const std::vector<std::string>& p, const std::string& w):TicTacToe(p, w){};
     
 
 private:
-    bool check_column_win();
+    bool check_column_win() const override;
 
-    bool check_row_win();
+    bool check_row_win() const override;
 
-    bool check_diagnol_win();
+    bool check_diagnol_win() const override;
 
 };
+
 #endif

@@ -11,12 +11,12 @@
 using std::vector;
 using std::unique_ptr;
 
-class TicTacToeData : public TicTacToe
+class TicTacToeData
 {
     public:
         void save_games(const std::vector<std::unique_ptr<TicTacToe>>& games);
 
-        std::vector<std::unique_ptr<TicTacToe>>get_games();
+        std::vector<std::unique_ptr<TicTacToe>> get_games();
 
 
     private:

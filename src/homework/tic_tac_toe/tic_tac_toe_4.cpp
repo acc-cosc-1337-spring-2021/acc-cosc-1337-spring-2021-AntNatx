@@ -10,7 +10,7 @@ Win by column if and return true if (each column index)
 else
 false
 */
-bool TicTacToe4::check_column_win()
+bool TicTacToe4::check_column_win() const
 {
     if (pegs[0] == "X" && pegs[4] == "X" && pegs[8] == "X" && pegs[12] == "X")
     {
@@ -52,7 +52,7 @@ bool TicTacToe4::check_column_win()
 }
 
 
-bool TicTacToe4::check_row_win()
+bool TicTacToe4::check_row_win() const
 {
     if (pegs[0] == "X" && pegs[1] == "X" && pegs[2] == "X" && pegs[3] == "X")
     {
@@ -101,7 +101,7 @@ Win by row if
 */
 
 
-bool TicTacToe4::check_diagnol_win()
+bool TicTacToe4::check_diagnol_win() const
 {
     if (pegs[0] == "X" && pegs[5] == "X" && pegs[10] == "X" && pegs[15] == "X")
     {

@@ -1,25 +1,24 @@
 //cpp
 #include"tic_tac_toe_data.h"
 #include<fstream>
-using std::make_unique;
+#include<memory>
 
 
-void TicTacToeData::save_games(const std::vector<std::unique_ptr<TicTacToe>>& games)
+void TicTacToeData::save_games(const std::vector<std::unique_ptr<TicTacToe>> &games)
 {
     std::ofstream out_file;
-    out_file.open(file_name);//open file
+    out_file.open(file_name);
 
     if (out_file.is_open())
     {
-        for(auto&game : games)//for each vector of TicTacToe
+        for(auto &game: games)//for each vector of TicTacToe
         {
-                for (auto& peg : game->get_pegs())//for each char in string
+                for (auto peg: game->get_pegs())//for each char in string
                 {
                     out_file<<peg;//write char to file 
                 }
 
-            out_file<<game->get_winner();//write winner of game to file
-            out_file<<"\n";
+                out_file<<game->get_winner()<<"\n";//write winner of game to file
         }
     }    
     out_file.close();
@@ -29,7 +28,7 @@ std::vector<std::unique_ptr<TicTacToe>>TicTacToeData::get_games()
 {
     std::ifstream in_file;
     
-    vector<unique_ptr<TicTacToe>> boards;
+    std::vector<std::unique_ptr<TicTacToe>> games;
     
     string line;//create a string line
 
@@ -39,32 +38,32 @@ std::vector<std::unique_ptr<TicTacToe>>TicTacToeData::get_games()
     {
         while (std::getline(in_file, line))
         {
-            vector<string> pegs;//create vector of string pegs
+            std::vector<std::string> pegs;//create vector of string pegs
 
-            for (size_t ch = 0; ch < (line.size()-1); ch++) //for each ch in line -1
+            for (std::size_t i = 0; i < (line.size()-1); i++) //for each ch in line -1
             {
-                string createAstring (1,line[ch]);
+                std::string ch (1,line[i]);
 
-                pegs.push_back(createAstring); // add the string to the vector of pegs
+                pegs.push_back(ch); // add the string to the vector of pegs
             }
 
-            string getTheWinner{line[line.size()-1]}; //last item in the vector of string   
+            std::string getTheWinner{line[line.size()-1]}; //last item in the vector of string   
 
-            unique_ptr<TicTacToe> board;
+            std::unique_ptr<TicTacToe> game;
 
             if (pegs.size() == 9)
             {
-                board = std::make_unique<tictactoe3>(pegs, winner);//winner private variable but inherited class should still have access?
+                game = std::make_unique<tictactoe3>(pegs, getTheWinner);
             }
             else if (pegs.size() == 16)
             {
-                board = std::make_unique<TicTacToe4>(pegs, winner);
+                game = std::make_unique<TicTacToe4>(pegs, getTheWinner);
             }
-            boards.push_back(std::move(board));
+            games.push_back(std::move(game));
         }
         
         in_file.close();
     } 
     
-    return boards;   
+    return games;   
 }

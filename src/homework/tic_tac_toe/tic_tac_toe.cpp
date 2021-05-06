@@ -12,26 +12,39 @@ using std::cout;
 
 std::ostream& operator<<(std::ostream& out, TicTacToe& game)
 {
+    
     if (game.pegs.size() == 9)
     {
-        for (int i = 0; i < 9; i += 3)
+        for (std::size_t i = 1; i <= game.pegs.size(); i++)
         {
-            out <<game.pegs[i] << "|" << game.pegs[i + 1] << "|" << game.pegs[i + 2] << "|" << "\n";
-        
+            if(i % 3 == 0)
+            {
+                out << game.pegs[i - 1];
+                out << std::endl;
+            }
+            else
+            {
+                out << game.pegs[i - 1];
+            }
         }
     }
-    
-    else if(game.pegs.size() == 16)
+    else if (game.pegs.size() == 16)
     {
-        for (int i = 0; i < 16; i += 4)
+        for (std::size_t i = 1; i <= game.pegs.size(); i++)
         {
-            out << game.pegs[i] << "|" << game.pegs[i + 1] << "|" << game.pegs[i + 2] << "|" << game.pegs[i + 3]<< "\n";
-        }       
+            if(i % 4 == 0)
+            {
+                out << game.pegs[i - 1];
+                out << std::endl;
+            }
+            else
+            {
+                out << game.pegs[i - 1];
+            }
+        }
     }
-    
-    /*cout<<game.pegs[0]<<" | "<<game.pegs[1]<<" | "<<game.pegs[2]<<"\n";
-    cout<<game.pegs[3]<<" | "<<game.pegs[4]<<" | "<<game.pegs[5]<<"\n";
-    cout<<game.pegs[6]<<" | "<<game.pegs[7]<<" | "<<game.pegs[8]<<"\n";*/
+
+    out << std::endl;
     
     return out;
 
@@ -83,30 +96,23 @@ std::istream& operator>>(std::istream& in, TicTacToe& game)
 }
 
 
-std::vector<string>TicTacToe::get_pegs()const
-{
-    return pegs;
-}
-
-
-
 bool TicTacToe::game_over()
 {
     if (this->check_row_win() == true)
     {
-        set_winner();
+        this->set_winner();
         return true;
     }
     
     else if (this->check_column_win() == true)
     {
-        set_winner();
+        this->set_winner();
         return true;
     }
     
     else if (this->check_diagnol_win() == true)
     {
-        set_winner();
+        this->set_winner();
         return true;
     }
     
@@ -159,7 +165,7 @@ bool TicTacToe::check_board_full()
 {
     for (size_t i = 0; i < pegs.size(); i++)
     {
-        if (pegs[i] == "")
+        if (pegs[i] == " ")
         {
             return false;
         }
@@ -170,28 +176,28 @@ bool TicTacToe::check_board_full()
 
 void TicTacToe::clear_board()
 {
-     for (int i = 0; i < 9; i++)
+     for (std::size_t i = 0; i < pegs.size(); i++)
     {
-        pegs[i] = "";
+        pegs[i] = " ";
     }
      
 }
-string TicTacToe::get_winner()const
+std::string TicTacToe::get_winner() const
 {
     return winner;
 }
 
-bool TicTacToe::check_column_win()const
+bool TicTacToe::check_column_win() const
 {
     return false;
 }
 
-bool TicTacToe::check_row_win()const
+bool TicTacToe::check_row_win() const
 {
     return false;
 }
 
-bool TicTacToe::check_diagnol_win()const
+bool TicTacToe::check_diagnol_win() const
 {   
     return false;
 }
